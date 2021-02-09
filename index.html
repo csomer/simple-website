@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9, IE=8, IE=9, IE=10, IE=Edge">
+
+<head>
+    <meta charset="utf-8" />
+    <title> HTML ONLY VERSION</title>
+    <!-- <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />-->
+    <meta name="viewport" content="width=device-width" />
+    <link href="Content/s-desktop.css" rel="stylesheet" media="all" type="text/css" />
+    <link href="Content/Site.css" rel="stylesheet" type="text/css" />
+
+    <script src="Scripts/jquery-1.8.2.min.js"></script>
+    <script src="Scripts/jquery-ui-1.10.4.min.js"></script>
+    <style>
+        #body {
+            font-size: 16px;
+            font-family: Segoe UI,Segoe,Tahoma,Helvetica,Arial,sans-serif;
+            min-height: 1400px;
+        }
+
+        .triggerbar {
+            background-color: #0072c6;
+            width: 91.8%;
+            padding: 10px;
+            color: white;
+            border-radius: 7px 7px 0 0;
+            cursor: pointer;
+        }
+
+        .triggerbarActive {
+            background-color: #0072c6;
+            width: 91.8%;
+            padding: 10px;
+            color: white;
+            border-radius: 7px 7px 0 0;
+            cursor: pointer;
+        }
+
+        .details {
+            border: 3px solid #e9ebed;
+            width: 97%;
+            height: 330px;
+        }
+
+        ul.box {
+            margin: 0 7px 10px 10px;
+            padding: 0;
+            text-align: left;
+            width: 220px;
+            list-style-type: none;
+        }
+
+            ul.box li {
+                list-style-type: none;
+                list-style-position: inside;
+                margin: 3px 0;
+                line-height: 1.2em;
+            }
+
+                ul.box li a {
+                    padding-left: 0;
+                }
+
+        .container {
+            width: 281px;
+            border: 0px solid black;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .module {
+            width: 280px;
+            margin: 5px;
+            float: left;
+        }
+
+        @media screen and (min-width: 580px) {
+            .container {
+                width: 580px;
+                border: 0px solid black;
+                margin: 0 auto;
+                padding: 0;
+            }
+        }
+
+        @media screen and (min-width: 960px) {
+
+            .container {
+                width: 960px;
+                border: 0px solid black;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $(".packageDetails").hover(function () {
+                $(this).css("text-decoration", "underline")
+            },
+                function () { $(this).css("text-decoration", "none"); }
+            );
+
+            $("#deptheader1").on("click", function () {
+                alert("work");
+                var detailsBox = $("#details1");
+                togglePackage(this, detailsBox);
+            });
+
+
+        });
+
+
+
+        function togglePackage(triggerBar, detailsBox) {
+
+            if (detailsBox.height() == 330) {
+                $(triggerBar).css("border-radius", "7px 7px 0 0");
+
+                $(triggerBar).removeClass("triggerbar");
+                $(triggerBar).addClass("triggerbarActive");
+
+                detailsBox.css("height", $(".detailsContentExpand").outerHeight());
+
+                $(".packageDetails", triggerBar).text("Close Additional Tools");
+
+            } else if (detailsBox.height() == $(".detailsContentExpand").outerHeight()) {
+
+                $(".packageDetails", triggerBar).text("Show Additional Tools");
+
+                $(triggerBar).css("border-radius", "7px 7px 0 0");
+
+                $(triggerBar).removeClass("triggerbarActive");
+                $(triggerBar).addClass("triggerbar");
+
+                detailsBox.css("height", "330px");
+            }
+        }
+
+        
+
+    </script>
+</head>
+
+
+<body>
+    <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p class="site-title">
+                    <!--<a href="/"><img src="~/Content/atmcLogo.jpg" /></a>-->
+                </p>
+            </div>
+            <div class="float-right">
+                
+                <nav>
+                    <ul id="menu">
+
+                        <li><a href="http://www.com">www.website.com</a></li>
+                        <li style="display: inline-block;"><a href="">another website link</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="ContentArea">
+        <div class="content-wrapper main-content clear-fix">
+           
+
+
+
+
+            <div class="container">
+                <div style="float:left; max-width: 580px;">
+                    <div class="module">
+                        <div id="deptheader0" class="triggerbar">
+                            What's New
+                        </div>
+
+                        <div id="details0" class="details" style="position: relative;  overflow: hidden;">
+                            <div class="detailsContent" style="margin: 10px; padding: 5px;">
+
+                                <ul class="box" style="margin: 10px; padding: 5px; list-style-position: outside;">
+
+                                    <li><a href="">link</a></li>
+
+<li><a href="">link</a></li><li><a href="">link</a></li><li><a href="">link</a></li>
+
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="module">
+                        <div id="deptheader2" class="triggerbar">
+                          Header of Tab
+                        </div>
+
+                        <div id="details2" class="details" style="position: relative;  overflow: hidden;">
+                            <div class="detailsContent" style="margin: 10px; padding: 5px;">
+                                <ul class="box" style="margin: 10px; padding: 5px;">
+                                  <li><a href="">link</a></li><li><a href="">link</a></li><li><a href="">link</a></li>
+                                  </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="module">
+                        <div id="deptheader3" class="triggerbar">
+                            Header Of Tab 2
+                        </div>
+
+                        <div id="details3" class="details" style="position: relative;  overflow: hidden;">
+                            <div class="detailsContent" style="margin: 10px; padding: 5px;">
+                                <ul class="box" style="margin: 10px; padding: 0px; list-style-position: outside;">
+                                   <li><a href="">link</a></li><li><a href="">link</a></li><li><a href="">link</a></li><li><a href="">link</a></li>
+                                </ul>
+
+
+
+                                <h3>Section Title</h3>
+                                <ul class="box" style="width: 170px; padding: 2px; margin:0px 10px; padding:0; list-style: none inside none;">
+                                  <li><a href="">link</a></li><li><a href="">link</a></li><li><a href="">link</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="module">
+                        <div id="deptheader4" class="triggerbar">
+                            Useful Links
+                        </div>
+
+                        <div id="details4" class="details" style="position: relative;  overflow: hidden;">
+                            <div class="detailsContent" style="margin: 10px; padding: 5px;">
+                                <ul class="box" style="margin: 10px; padding: 0px;">
+                                   <li><a href="">link</a></li>
+
+                                </ul>
+                                <h3>File Shares</h3>
+                                <ul class="box" style="width: 170px; padding: 2px; margin:0px 10px; padding:0; list-style: none inside none;">
+
+
+
+
+                                    <li>
+                                        <a onclick="window.open('file://', 'OPENLOCATION','scrollbars=yes,fullscreen=no,resizable=yes,status=yes,width=1024,height=768,top=0,left=0')" href="#">
+                                            Public Share
+                                        </a>
+                                    </li>
+
+                                   
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module">
+                    <div id="deptheader1" class="triggerbar">
+                        <div class="packageDetails" style="float: right; font-size: .8em;">Show Additional Tools</div>
+                        Tools
+                    </div>
+
+                    <div id="details1" class="details" style="position: relative;   overflow: hidden;">
+
+                        <div class="detailsContentExpand" style="margin: 10px;  padding: 5px;">
+                            <ul class="box" style="margin: 10px; padding: 5px; list-style: none;">
+                               <li><a href="">link</a></li><li><a href="">link</a></li><li><a href="">link</a></li>
+
+                            </ul>
+                            <br /><br /><br /><br /><br /><br /><br />
+
+                            <p style="height: 10px;"></p>
+                            <h3>Additional Tools</h3>
+                            <ul class="box" style="margin: 0 10px; padding: 5px;">
+                               <li><a href="">link</a></li><li><a href="">link</a></li><li><a href="">link</a></li><li><a href="">link</a></li><li><a href="">link</a></li><li><a href="">link</a></li><li><a href="">link</a></li><li><a href="">link</a></li><li><a href="">link</a></li><li><a href="">link</a></li>
+                            </ul>
+
+
+                            <p style="clear: both;"><br /></p>
+                            <br />
+                        </div>
+                        <p style="clear: both;"><br /></p>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+            <div style="float:right;  width: auto; border: 0px solid black; margin: 0; padding: 0;"> </div>
+
+            <br />
+            <p style="clear:both;"></p>
+
+        </div>
+    </div>
+    <footer>
+        <div class="content-wrapper" style="color:#d3d3d3">
+            <div class="float-left">
+                <p>&copy; DateTime.Now.Year - atmcintra</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>
+
+   
+
